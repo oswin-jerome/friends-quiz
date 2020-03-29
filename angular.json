@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "friends-quiz": {
@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "friends-quiz"
+    }
+  },
+  "defaultProject": "friends-quiz",
+  "cli": {
+    "analytics": "582d8a9e-5d3f-47db-abb6-e2d2e4c8f997"
+  }
 }
