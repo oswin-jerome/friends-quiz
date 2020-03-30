@@ -1,9 +1,9 @@
 <div class="container">
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, impedit.</p>
     <p>Lorem ipsum dolor sit amet.</p>
-
+    {{status}}
     <div class="form">
-        <input type="text">
-        <button>Start</button>
+        <input (keyup)="formName($event)" type="text" >
+        <button (click)="saveName()">Start</button>
     </div>
 </div>
