@@ -1,0 +1,41 @@
+.container{
+    text-align: center;
+    padding-top: 50px;
+
+    .indicators{
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        
+        div{
+            background-color: #bebebe;
+            margin: 5px;
+            padding: 5px;
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+        }
+    }
+
+    .question{
+        margin-top: 20px;
+    }
+
+    .answers{
+        width: 90%;
+        margin: auto;
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+
+        .option{
+            border: 1px solid rgb(116, 116, 116);
+            padding-bottom: 3px;
+            img{
+                width: 100%;
+            }
+        }
+    }
+
+}

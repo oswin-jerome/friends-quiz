@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { CreateComponent } from './create/create.component';
+import { QuizComponent } from './quiz/quiz.component';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { GameComponent } from './game/game.component';
 
 
 
@@ -15,7 +18,10 @@ import { CreateComponent } from './create/create.component';
     AppComponent,
     FooterComponent,
     HomeComponent,
-    CreateComponent
+    CreateComponent,
+    QuizComponent,
+    LeaderboardComponent,
+    GameComponent
   ],
   imports: [
     BrowserModule,
