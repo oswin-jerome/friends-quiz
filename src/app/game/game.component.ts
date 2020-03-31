@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-game',
@@ -10,7 +11,7 @@ export class GameComponent implements OnInit {
   questions = []
 
   currentQuestion = 0;
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   optionSelect(id){
     console.log(id)
@@ -25,7 +26,7 @@ export class GameComponent implements OnInit {
 
 
   sendToServer(){
-    fetch('http://localhost:4455/api/create',{
+    fetch('http://localhost:4455/api/quiz/'+this.route.snapshot.paramMap.get('id'),{
       method:'POST',
       body:JSON.stringify({
         name:localStorage.getItem('name'),
@@ -37,12 +38,19 @@ export class GameComponent implements OnInit {
     }).then((res)=>{
       res.json().then((data)=>{
         console.log(data)
-        localStorage.setItem('id',data['id'])
       })
     }).catch((err)=>console.log(err))
   }
 
   ngOnInit(): void {
-    
+    console.log('sdsd')
+    fetch('http://localhost:4455/api/quiz/'+this.route.snapshot.paramMap.get('id'),{
+      method:"GET"
+    }).then((res)=>{
+      res.json().then((data)=>{
+        console.log(data)
+        this.questions = data
+      })
+    })
   }
 }
