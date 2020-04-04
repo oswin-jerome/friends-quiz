@@ -38,8 +38,6 @@ router.post('/quiz/:id',(req,res)=>{
         }
 
         for(var i=0;i<doc[0]['questions'].length;i++){
-            // console.log(doc[i]['questions'])
-            // console.log(doc[0]['questions'][i]['answer'],body[i]['answer'])
             if(doc[0]['questions'][i]['answer']==body[i]['answer']){
                 console.log("correct "+i)
                 score = score+1;

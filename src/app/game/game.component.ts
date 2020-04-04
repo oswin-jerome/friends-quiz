@@ -11,7 +11,7 @@ export class GameComponent implements OnInit {
   questions = []
 
   currentQuestion = 0;
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute,private router: Router ) { }
 
   optionSelect(id){
     console.log(id)
@@ -26,10 +26,13 @@ export class GameComponent implements OnInit {
 
 
   sendToServer(){
+    if(document.getElementById('name').innerText.length<1){
+      return alert("Enter your name")
+    }
     fetch('http://localhost:4455/api/quiz/'+this.route.snapshot.paramMap.get('id'),{
       method:'POST',
       body:JSON.stringify({
-        name:localStorage.getItem('name'),
+        name:document.getElementById('name').innerText,
         questions:this.questions
       }),
       headers:{
@@ -38,6 +41,7 @@ export class GameComponent implements OnInit {
     }).then((res)=>{
       res.json().then((data)=>{
         console.log(data)
+        this.router.navigate(['/']);
       })
     }).catch((err)=>console.log(err))
   }
