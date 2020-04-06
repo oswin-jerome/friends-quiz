@@ -19,7 +19,7 @@ export class GameComponent implements OnInit {
     console.log(this.currentQuestion, this.questions.length-1)
     if(this.questions.length-1<=this.currentQuestion){
       this.sendToServer();
-      return console.log("end")
+      return console.log("end of game")
     }
     this.currentQuestion = this.currentQuestion+1;
   }
